@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Base link styles that apply to all <a> tags */
+  a {
+    @apply text-gray-300 transition-colors duration-200;
+  }
+  
+  /* Hover state for links */
+  a:hover {
+    @apply text-white;
+  }
+
+  /* Active/current page link */
+  a[aria-current="page"] {
+    @apply text-white;
+  }
+}
