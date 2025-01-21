@@ -102,10 +102,22 @@ npm run dev
 
 # Backend
 cd backend
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 flask run
 ```
 
+[ ] Use a production WSGI server instead or similar when ready for prod.
+
+
 Visit http://localhost:3000 to see your portfolio.
+
+# Access the health check endpoint
+
+## Make sure to run the flask server
+http://localhost:5000/api/health-check
+
 
 ## Project Structure
 ```
