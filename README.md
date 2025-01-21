@@ -25,6 +25,11 @@ A full-stack portfolio and blog platform built with Next.js 14 and modern web te
 - Monitoring: Datadog
 - Hosting: Vercel
 
+### Testing
+- Jest
+- React Testing Library
+- Cypress
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
