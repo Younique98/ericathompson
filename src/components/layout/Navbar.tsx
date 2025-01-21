@@ -1,56 +1,65 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Menu, X, Sun, Moon } from 'lucide-react';
-import clsx from 'clsx';
-
-const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
-  const pathname = usePathname();
-  
-  return (
-    <Link 
-      href={href}
-      className={clsx(
-        'transition-colors duration-200',
-        pathname === href ? 'text-white' : 'text-gray-300 hover:text-white'
-      )}
-    >
-      {children}
-    </Link>
-  );
-};
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import clsx from "clsx";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLight, setIsLight] = useState(false);
 
   const toggleTheme = () => {
-    console.log('Current theme:', isLight ? 'light' : 'dark');
     setIsLight(!isLight);
-    document.body.classList.toggle('light');
-    console.log('Theme toggled to:', !isLight ? 'light' : 'dark');
+    document.body.classList.toggle("light");
   };
 
-  const buttonClasses = clsx(
-    'p-2 transition-colors duration-200',
-    isLight ? 'text-gray-600 hover:text-gray-900' : 'text-gray-300 hover:text-white'
-  );
+  const ToggleButton = () => {
+    return (
+      <button onClick={toggleTheme}>
+        {isLight ? (
+          <Moon className="w-5 h-5" stroke="black" />
+        ) : (
+          <Sun className="w-5 h-5" />
+        )}
+      </button>
+    );
+  };
 
+  const NavLink = ({
+    href,
+    children,
+  }: {
+    href: string;
+    children: React.ReactNode;
+  }) => {
+    return (
+      <Link
+        href={href}
+        className={clsx(
+          "transition-colors duration-200",
+          !isLight
+            ? "text-white hover:text-yellow-500"
+            : "text-black hover:text-black hover:underline",
+        )}
+      >
+        {children}
+      </Link>
+    );
+  };
   return (
-    <nav className={clsx(
-      'fixed top-0 w-full z-50',
-      isLight ? 'bg-white' : 'bg-black'
-    )}>
+    <nav className="fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link href="/" className={clsx(
-              'font-bold text-xl',
-              isLight ? 'text-black' : 'text-white'
-            )}>
-              Your Name
+            <Link
+              href="/"
+              className={clsx(
+                "font-bold text-xl",
+                isLight ? "text-black " : "text-white",
+              )}
+            >
+              Erica Thompson
             </Link>
           </div>
 
@@ -60,35 +69,23 @@ export const Navbar = () => {
             <NavLink href="/courses">Courses</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/contact">Contact</NavLink>
-            
-            <button
-              onClick={toggleTheme}
-              className={buttonClasses}
-            >
-              {isLight ? (
-                <Moon className="w-5 h-5" />
-              ) : (
-                <Sun className="w-5 h-5" />
-              )}
-            </button>
+
+            <ToggleButton />
           </div>
 
           <div className="md:hidden flex items-center space-x-2">
-            <button 
-              onClick={toggleTheme}
-              className={buttonClasses}
-            >
-              {isLight ? (
-                <Moon className="w-5 h-5" />
+            <ToggleButton />
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
               ) : (
-                <Sun className="w-5 h-5" />
+                <Menu
+                  className={clsx(
+                    "h-6 w-6",
+                    isLight ? "stroke-black" : "stroke-white",
+                  )}
+                />
               )}
-            </button>
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={buttonClasses}
-            >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>

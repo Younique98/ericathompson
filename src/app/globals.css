@@ -2,30 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Default dark theme */
+:root {
+  --transition-speed: 200ms;
+  --bg-main: black;
+  --text-main: white;
+  --bg-nav: black;
+}
+
 body {
-  @apply bg-black text-white transition-colors duration-300;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  transition:
+    background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease;
 }
 
-/* Light theme */
 body.light {
-  @apply bg-white text-black;
+  --bg-main: white;
+  --text-main: black;
+  --bg-nav: white;
 }
 
-/* Navigation links - dark theme (default) */
+nav {
+  background-color: var(--bg-nav);
+  transition: background-color var(--transition-speed) ease;
+}
+
 a {
-  @apply text-gray-300 transition-colors duration-200;
-}
-
-a:hover {
-  @apply text-white;
-}
-
-/* Navigation links - light theme */
-body.light a {
-  @apply text-gray-600;
-}
-
-body.light a:hover {
-  @apply text-black;
+  transition: color var(--transition-speed) ease;
 }
