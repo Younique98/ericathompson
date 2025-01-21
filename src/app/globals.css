@@ -2,20 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Default dark theme */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-black text-white transition-colors duration-300;
+}
+
+/* Light theme */
+body.light {
+  @apply bg-white text-black;
+}
+
+/* Navigation links - dark theme (default) */
+a {
+  @apply text-gray-300 transition-colors duration-200;
+}
+
+a:hover {
+  @apply text-white;
+}
+
+/* Navigation links - light theme */
+body.light a {
+  @apply text-gray-600;
+}
+
+body.light a:hover {
+  @apply text-black;
 }
