@@ -31,7 +31,7 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen py-12 px-6">
-      <h1 className="text-4xl font-bold mb-8">Blog</h1>
+      <h1 className="text-4xl font-bold mb-8 pt-8">Blog</h1>
       <div className="grid gap-8">
         {blogPosts.map((post, index) => (
           <div

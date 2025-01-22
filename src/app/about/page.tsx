@@ -4,8 +4,8 @@ import { TestimonialCarousel } from "@/components/testimonials/TestimonialCarous
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen py-12">
-      <h1 className="text-4xl font-bold mb-8">About Me</h1>
+    <div className="min-h-screen py-12 px-6">
+      <h1 className="text-4xl font-bold mb-8 pt-10">About Me</h1>
       <div className="prose prose-invert max-w-none">
         <Intro />
         <div className="mt-8">
