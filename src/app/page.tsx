@@ -7,7 +7,6 @@ export default function Home() {
         <h1 className="text-3xl font-bold">
           <span className="text-blue-500">Welcome</span>
         </h1>
-
       </header>
 
       {/* Main Content */}
@@ -22,7 +21,6 @@ export default function Home() {
             others.
           </p>
         </section>
-
         <section>
           <h3 className="text-2xl font-bold mb-4">What I Do</h3>
           <p className="text-lg">
@@ -30,10 +28,10 @@ export default function Home() {
             cloud solutions. Let&apos;s build something amazing together.
           </p>
         </section>
-TODO: (ET) Add in my work and demo link/live link, and github link
+        TODO: (ET) Add in my work and demo link/live link, and github link
         <div className="flex gap-4">
           <a
-            href="#projects"
+            href="/projects"
             className="px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600"
           >
             View My Work
@@ -44,15 +42,16 @@ TODO: (ET) Add in my work and demo link/live link, and github link
           >
             Get in Touch
           </a>
-                    <a
-            href="#projects"
+          <a
+            href="/pdf/career/Erica_S_Thompson_Full_Stack_Developer_Resume.pdf"
             className="px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             View My Resume
           </a>
         </div>
       </main>
-
     </div>
   );
 }

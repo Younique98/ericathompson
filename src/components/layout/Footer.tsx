@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Mail } from 'lucide-react';
+import React from "react";
+import { Mail } from "lucide-react";
 
 interface SocialIconProps {
   href: string;
@@ -10,17 +10,18 @@ interface SocialIconProps {
   path: string;
 }
 
-const SocialIcon: React.FC<SocialIconProps> = ({ href, label, viewBox = "0 0 24 24", path }) => (
-  <a 
+const SocialIcon: React.FC<SocialIconProps> = ({
+  href,
+  label,
+  viewBox = "0 0 24 24",
+  path,
+}) => (
+  <a
     href={href}
     className="text-gray-400 hover:text-white transition-colors duration-200"
     aria-label={label}
   >
-    <svg
-      role="img"
-      viewBox={viewBox}
-      className="w-6 h-6 fill-current"
-    >
+    <svg role="img" viewBox={viewBox} className="w-6 h-6 fill-current">
       <path d={path} />
     </svg>
   </a>
@@ -51,8 +52,8 @@ export const Footer = () => {
             label="YouTube"
             path="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
           />
-          <a 
-            href="mailto:ericathompsonsmiles@gmail.com" 
+          <a
+            href="mailto:ericathompsonsmiles@gmail.com"
             className="text-gray-400 hover:text-white transition-colors duration-200"
             aria-label="Email"
           >

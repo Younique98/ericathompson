@@ -7,16 +7,15 @@ export default function AboutPage() {
     <div className="min-h-screen py-12">
       <h1 className="text-4xl font-bold mb-8">About Me</h1>
       <div className="prose prose-invert max-w-none">
-     <Intro/>
+        <Intro />
         <div className="mt-8">
           <h2 className="text-2xl font-bold mb-4">Skills</h2>
-         <TechSkills />
+          <TechSkills />
         </div>
       </div>
 
       <section className="mb-12">
-  
-              <h2 className="text-2xl font-bold my-6">Technical Achievements</h2>
+        <h2 className="text-2xl font-bold my-6">Technical Achievements</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="p-6 bg-gray-800 rounded">
             <h3 className="text-xl font-semibold mb-3">
@@ -133,9 +132,17 @@ export default function AboutPage() {
 
         <div className="mt-8 p-6 bg-gray-800 rounded-lg text-center">
           <p className="text-lg text-gray-300">
-            Interested in mentoring? Feel free to reach out - I&apos;m always happy
-            to connect and share experiences in tech.
+            Interested in mentoring? Feel free to reach out - I&apos;m always
+            happy to connect and share experiences in tech.
           </p>
+          <div className="py-6">
+            <a
+              href="/contact"
+              className="px-6 py-3 rounded-lg bg-cyan-400 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700"
+            >
+              Get in Touch
+            </a>
+          </div>
         </div>
       </section>
     </div>
