@@ -9,7 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-//TODO: (ET) Add correct image links to projects
+// TODO: (ET) Add correct image links to projects
 //TODO: (ET) Deploy all projects to vercel and update live url
 export default function ProjectsPage() {
   const projects = [

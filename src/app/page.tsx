@@ -28,7 +28,7 @@ export default function Home() {
             cloud solutions. Let&apos;s build something amazing together.
           </p>
         </section>
-        TODO: (ET) Add in my work and demo link/live link, and github link
+        {/* TODO: (ET) Add in my work and demo link/live link, and github link */}
         <div className="flex gap-4">
           <a
             href="/projects"
