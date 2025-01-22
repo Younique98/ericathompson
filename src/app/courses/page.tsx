@@ -1,7 +1,7 @@
 export default function CoursesPage() {
   return (
     <div className="min-h-screen py-12">
-      <h1 className="text-4xl font-bold mb-8">Courses</h1>
+      <h1 className="text-4xl font-bold mb-8 pt-8">Courses</h1>
       <div className="grid md:grid-cols-2 gap-8">
         <div className="p-6 rounded bg-gray-800">
           <h2 className="text-xl font-bold mb-4">

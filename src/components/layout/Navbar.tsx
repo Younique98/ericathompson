@@ -36,6 +36,7 @@ export const Navbar = () => {
     return (
       <Link
         href={href}
+        onClick={() => setIsMenuOpen(false)}
         className={clsx(
           "transition-colors duration-200",
           !isLight
