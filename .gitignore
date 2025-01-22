@@ -42,7 +42,7 @@ venv/
 ENV/
 env/
 bin/
-lib/
+# lib/
 include/
 *.egg
 *.egg-info/
