@@ -39,10 +39,16 @@ TODO: (ET) Add in my work and demo link/live link, and github link
             View My Work
           </a>
           <a
-            href="#contact"
+            href="/contact"
             className="px-6 py-3 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700"
           >
             Get in Touch
+          </a>
+                    <a
+            href="#projects"
+            className="px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600"
+          >
+            View My Resume
           </a>
         </div>
       </main>
