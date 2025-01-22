@@ -67,6 +67,7 @@ export const Navbar = () => {
             <NavLink href="/">Home</NavLink>
             <NavLink href="/blog">Blog</NavLink>
             <NavLink href="/courses">Courses</NavLink>
+            <NavLink href="/projects">Projects</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/contact">Contact</NavLink>
 
@@ -96,6 +97,7 @@ export const Navbar = () => {
               <NavLink href="/">Home</NavLink>
               <NavLink href="/blog">Blog</NavLink>
               <NavLink href="/courses">Courses</NavLink>
+              <NavLink href="/projects">Projects</NavLink>
               <NavLink href="/about">About</NavLink>
               <NavLink href="/contact">Contact</NavLink>
             </div>
