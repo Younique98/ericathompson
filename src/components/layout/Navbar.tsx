@@ -92,7 +92,7 @@ export const Navbar = () => {
 
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-3">
+            <div className="px-2 pt-2 pb-3 space-y-3 flex flex-col">
               <NavLink href="/">Home</NavLink>
               <NavLink href="/blog">Blog</NavLink>
               <NavLink href="/courses">Courses</NavLink>
