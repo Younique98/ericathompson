@@ -43,7 +43,7 @@ export default function Home() {
             Get in Touch
           </a>
           <a
-            href="/pdf/career/Erica_S_Thompson_Full_Stack_Developer_Resume.pdf"
+            href="/pdf/career/Erica_Thompson_Lead_Resume_With_Engineering_Highlights.pdf.pdf"
             className="px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600"
             target="_blank"
             rel="noopener noreferrer"
