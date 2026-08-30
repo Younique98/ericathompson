@@ -30,7 +30,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans">
+    <div className="min-h-screen bg-background text-foreground font-sans">
       <main className="mx-auto max-w-5xl px-6 py-16 sm:py-24 flex flex-col gap-20">
         {/* Hero */}
         <section className="text-center">
@@ -49,7 +49,7 @@ export default function Home() {
               href="https://www.youtube.com/@TheImposterEngineer"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 hover:underline"
+              className="text-cyan-400 hover:underline"
             >
               @TheImposterEngineer
             </a>
@@ -58,7 +58,7 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
               href="/contact"
-              className="px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 font-semibold"
+              className="px-6 py-3 rounded-lg bg-cyan-400 text-black hover:bg-cyan-300 font-semibold transition-colors"
             >
               Book an Audit
             </a>
@@ -66,13 +66,13 @@ export default function Home() {
               href="/pdf/career/Erica_Thompson_Fractional_CTO_Resume_2026.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 font-semibold"
+              className="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700 font-semibold transition-colors"
             >
               Resume
             </a>
             <a
               href="/projects"
-              className="px-6 py-3 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 font-semibold"
+              className="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700 font-semibold transition-colors"
             >
               Projects
             </a>
@@ -88,12 +88,14 @@ export default function Home() {
             {proofPoints.map((p) => (
               <div
                 key={p.label}
-                className="rounded-xl bg-white dark:bg-gray-800 p-6 text-center shadow-sm"
+                className="rounded-xl bg-gray-800 border border-gray-700 p-6 text-center"
               >
-                <div className="text-3xl font-extrabold text-blue-500">
+                <div className="text-3xl font-extrabold text-cyan-400">
                   {p.stat}
                 </div>
-                <div className="mt-2 text-sm leading-snug">{p.label}</div>
+                <div className="mt-2 text-sm leading-snug text-gray-300">
+                  {p.label}
+                </div>
               </div>
             ))}
           </div>
@@ -106,15 +108,17 @@ export default function Home() {
             {services.map((s) => (
               <div
                 key={s.title}
-                className="rounded-xl bg-white dark:bg-gray-800 p-6 shadow-sm flex flex-col"
+                className="rounded-xl bg-gray-800 border border-gray-700 p-6 flex flex-col"
               >
                 <h3 className="text-lg font-bold">{s.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed flex-1">{s.detail}</p>
-                <p className="mt-4 font-semibold text-blue-500">{s.price}</p>
+                <p className="mt-3 text-sm leading-relaxed flex-1 text-gray-300">
+                  {s.detail}
+                </p>
+                <p className="mt-4 font-semibold text-cyan-400">{s.price}</p>
               </div>
             ))}
           </div>
-          <p className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
+          <p className="mt-6 text-center text-sm text-gray-400">
             Select engagements. Tuesday through Thursday. Async-first teams
             preferred. Remote worldwide, with on-site audits and conference
             speaking by arrangement. I do not staff hourly feature development.
@@ -124,7 +128,7 @@ export default function Home() {
         {/* Teaching */}
         <section className="text-center max-w-2xl mx-auto">
           <h2 className="text-2xl font-bold mb-4">The Imposter Engineer</h2>
-          <p className="text-lg leading-relaxed">
+          <p className="text-lg leading-relaxed text-gray-300">
             I trained 500+ engineers into this industry, including 100+
             veterans and military spouses at an 80%+ placement rate. I teach
             what engineers actually need: judgment, systems, and the audacity
@@ -134,7 +138,7 @@ export default function Home() {
             href="https://www.youtube.com/@TheImposterEngineer"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-block px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 font-semibold"
+            className="mt-6 inline-block px-6 py-3 rounded-lg bg-cyan-400 text-black hover:bg-cyan-300 font-semibold transition-colors"
           >
             Watch on YouTube
           </a>

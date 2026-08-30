@@ -29,7 +29,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
 
 export const Footer = () => {
   return (
-    <footer className="bg-black py-12 mt-20">
+    <footer className="bg-background border-t border-gray-800 py-12 mt-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-center space-x-6">
           <SocialIcon

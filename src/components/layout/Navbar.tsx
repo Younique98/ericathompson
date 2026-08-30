@@ -2,29 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Sun, Moon } from "lucide-react";
-import clsx from "clsx";
+import { Menu, X } from "lucide-react";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLight, setIsLight] = useState(false);
-
-  const toggleTheme = () => {
-    setIsLight(!isLight);
-    document.body.classList.toggle("light");
-  };
-
-  const ToggleButton = () => {
-    return (
-      <button onClick={toggleTheme}>
-        {isLight ? (
-          <Moon className="w-5 h-5" stroke="black" />
-        ) : (
-          <Sun className="w-5 h-5" />
-        )}
-      </button>
-    );
-  };
 
   const NavLink = ({
     href,
@@ -37,30 +18,21 @@ export const Navbar = () => {
       <Link
         href={href}
         onClick={() => setIsMenuOpen(false)}
-        className={clsx(
-          "transition-colors duration-200",
-          !isLight
-            ? "text-white hover:text-yellow-500"
-            : "text-black hover:text-black hover:underline",
-        )}
+        className="text-gray-300 hover:text-cyan-400 transition-colors duration-200"
       >
         {children}
       </Link>
     );
   };
+
   return (
-    <nav className="fixed top-0 w-full z-50">
+    <nav className="fixed top-0 w-full z-50 border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className={clsx(
-                "flex items-center justify-center w-9 h-9 rounded-full text-sm font-bold transition-colors",
-                isLight
-                  ? "bg-black text-white hover:bg-gray-800"
-                  : "bg-white text-black hover:bg-gray-200",
-              )}
+              className="flex items-center justify-center w-9 h-9 rounded-full bg-cyan-400 text-black text-sm font-bold hover:bg-cyan-300 transition-colors"
             >
               <span className="sr-only">Erica Thompson, home</span>
               <span aria-hidden="true">ET</span>
@@ -74,34 +46,24 @@ export const Navbar = () => {
             <NavLink href="/projects">Projects</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/contact">Contact</NavLink>
-
-            <ToggleButton />
           </div>
 
-          <div className="md:hidden flex items-center space-x-2">
-            <ToggleButton />
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
               {isMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-6 w-6 text-gray-100" />
               ) : (
-                <Menu
-                  className={clsx(
-                    "h-6 w-6",
-                    isLight ? "stroke-black" : "stroke-white",
-                  )}
-                />
+                <Menu className="h-6 w-6 text-gray-100" />
               )}
             </button>
           </div>
         </div>
 
         {isMenuOpen && (
-          <div
-            className={clsx(
-              "md:hidden border-t",
-              isLight ? "border-black/10" : "border-white/10",
-            )}
-          >
+          <div className="md:hidden border-t border-white/10">
             <div className="px-2 py-4 space-y-4 flex flex-col text-base">
               <NavLink href="/">Home</NavLink>
               <NavLink href="/blog">Blog</NavLink>

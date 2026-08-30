@@ -84,7 +84,7 @@ export default function BlogPage() {
           href="https://www.youtube.com/@TheImposterEngineer"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-500 hover:underline"
+          className="text-cyan-400 hover:underline"
         >
           The Imposter Engineer
         </a>
