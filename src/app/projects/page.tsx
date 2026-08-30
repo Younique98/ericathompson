@@ -6,6 +6,8 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { BrowserFrame } from "@/components/ui/browser-frame";
+import { Reveal } from "@/components/motion/Reveal";
 import Image from "next/image";
 
 // TODO: (ET) Add correct image links to projects
@@ -20,6 +22,7 @@ export default function ProjectsPage() {
       details:
         "https://github.com/Younique98/military_base_rideshare/blob/main/README.md",
       image: "/images/military_ride_share_app.jpg",
+      label: "military-base-rideshare.app",
     },
     {
       title: "Milspouse Elevate",
@@ -29,6 +32,7 @@ export default function ProjectsPage() {
       details:
         "https://github.com/Younique98/milspouse-elevate/blob/main/README.md",
       image: "/images/MilSpouse.png",
+      label: "milspouse-elevate.app",
     },
     {
       title: "Windless Technologies Website",
@@ -38,6 +42,7 @@ export default function ProjectsPage() {
       details:
         "https://github.com/Younique98/windless_technologies_company_website/blob/main/README.md",
       image: "/images/home_page_consulting_ windless_technologies.png",
+      label: "windlesstechnologies.com",
     },
     {
       title: "Elasticsearch Blog",
@@ -47,6 +52,7 @@ export default function ProjectsPage() {
       details:
         "https://github.com/Younique98/elastic-search-blog/blob/main/README.md",
       image: "/images/elastic_search_walkthrough.png",
+      label: "elastic-search-blog.app",
     },
   ];
 
@@ -60,43 +66,44 @@ export default function ProjectsPage() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="overflow-hidden flex flex-col hover:border-cyan-500/50 transition-colors"
-            >
-              <div className="relative w-full aspect-video bg-muted">
-                <Image
-                  src={project.image}
-                  alt={`${project.title} preview`}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardFooter className="mt-auto flex gap-3">
-                <Button asChild variant="secondary" className="flex-1">
-                  <a
-                    href={project.details}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Details
-                  </a>
-                </Button>
-                <Button asChild className="flex-1">
-                  <a
-                    href={project.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    GitHub
-                  </a>
-                </Button>
-              </CardFooter>
-            </Card>
+            <Reveal key={index} delay={(index % 2) * 0.08}>
+              <Card className="overflow-hidden flex flex-col transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:border-cyan-500/50">
+                <BrowserFrame label={project.label}>
+                  <div className="relative w-full aspect-video bg-muted">
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} preview`}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                </BrowserFrame>
+                <CardHeader>
+                  <CardTitle className="text-xl">{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+                <CardFooter className="mt-auto flex gap-3">
+                  <Button asChild variant="secondary" className="flex-1">
+                    <a
+                      href={project.details}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Details
+                    </a>
+                  </Button>
+                  <Button asChild className="flex-1">
+                    <a
+                      href={project.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </div>

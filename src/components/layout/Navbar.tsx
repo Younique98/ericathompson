@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Menu, X, Sun, Moon } from "lucide-react";
 
@@ -9,10 +10,14 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   const NavLink = ({
     href,
@@ -21,13 +26,22 @@ export const Navbar = () => {
     href: string;
     children: React.ReactNode;
   }) => {
+    const active = isActive(href);
     return (
       <Link
         href={href}
         onClick={() => setIsMenuOpen(false)}
-        className="text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200"
+        aria-current={active ? "page" : undefined}
+        className={`relative pb-1 transition-colors duration-200 ${
+          active
+            ? "text-cyan-600 dark:text-cyan-400 font-semibold"
+            : "text-gray-700 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400"
+        }`}
       >
         {children}
+        {active && (
+          <span className="absolute left-0 right-0 -bottom-[1px] h-0.5 rounded-full bg-cyan-500 dark:bg-cyan-400" />
+        )}
       </Link>
     );
   };

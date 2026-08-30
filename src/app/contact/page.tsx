@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Mail, Github, Linkedin, Coffee } from "lucide-react";
+import { Reveal } from "@/components/motion/Reveal";
 
 const contactMethods = [
   {
@@ -49,24 +50,27 @@ export default function ContactPage() {
         </p>
 
         <div className="grid gap-4 sm:grid-cols-3 mb-10">
-          {contactMethods.map(({ href, icon: Icon, label, value }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith("http") ? "_blank" : undefined}
-              rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="p-5 bg-card border border-border rounded-xl hover:bg-accent transition-colors flex flex-col items-start gap-2"
-            >
-              <Icon className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
-              <div>
-                <p className="font-semibold text-foreground text-sm">
-                  {label}
-                </p>
-                <p className="text-muted-foreground text-xs break-all">
-                  {value}
-                </p>
-              </div>
-            </a>
+          {contactMethods.map(({ href, icon: Icon, label, value }, index) => (
+            <Reveal key={label} delay={index * 0.06}>
+              <a
+                href={href}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={
+                  href.startsWith("http") ? "noopener noreferrer" : undefined
+                }
+                className="p-5 bg-card border border-border rounded-xl transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:border-cyan-500/40 flex flex-col items-start gap-2"
+              >
+                <Icon className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
+                <div>
+                  <p className="font-semibold text-foreground text-sm">
+                    {label}
+                  </p>
+                  <p className="text-muted-foreground text-xs break-all">
+                    {value}
+                  </p>
+                </div>
+              </a>
+            </Reveal>
           ))}
         </div>
 
@@ -107,7 +111,7 @@ export default function ContactPage() {
             />
             <button
               type="submit"
-              className="px-6 py-3 rounded-lg bg-cyan-500 dark:bg-cyan-400 hover:bg-cyan-400 dark:hover:bg-cyan-300 text-white dark:text-black font-semibold transition-colors"
+              className="px-6 py-3 rounded-lg bg-cyan-500 dark:bg-cyan-400 hover:bg-cyan-400 dark:hover:bg-cyan-300 text-white dark:text-black font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
             >
               Send message
             </button>

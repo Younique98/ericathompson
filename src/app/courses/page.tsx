@@ -1,3 +1,5 @@
+import { Reveal } from "@/components/motion/Reveal";
+
 export default function WorkshopsPage() {
   const offerings = [
     {
@@ -32,50 +34,57 @@ export default function WorkshopsPage() {
         Conference talks and fly-in engagements by arrangement.
       </p>
 
-      <div className="grid md:grid-cols-2 gap-8 mb-16">
-        {offerings.map((o) => (
-          <div key={o.title} className="p-6 rounded-lg bg-card border border-border">
-            <h2 className="text-xl font-bold mb-3">{o.title}</h2>
-            <p className="text-muted-foreground">{o.detail}</p>
-          </div>
-        ))}
-      </div>
+      <Reveal>
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {offerings.map((o) => (
+            <div
+              key={o.title}
+              className="p-6 rounded-lg bg-card border border-border transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+            >
+              <h2 className="text-xl font-bold mb-3">{o.title}</h2>
+              <p className="text-muted-foreground">{o.detail}</p>
+            </div>
+          ))}
+        </div>
+      </Reveal>
 
-      <h2 className="text-2xl font-bold mb-6">Watch Me Teach</h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="p-6 rounded-lg bg-card border border-border">
-          <h3 className="text-xl font-bold mb-4">
-            Women In Tech: Establish and Grow Your Developer Career
-          </h3>
-          <div className="relative w-full pb-[56.25%]">
-            <iframe
-              src="https://www.youtube.com/embed/ZvDZPpVM9gI"
-              title="Women In Tech talk"
-              className="absolute top-0 left-0 w-full h-full"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+      <Reveal>
+        <h2 className="text-2xl font-bold mb-6">Watch Me Teach</h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="p-6 rounded-lg bg-card border border-border transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+            <h3 className="text-xl font-bold mb-4">
+              Women In Tech: Establish and Grow Your Developer Career
+            </h3>
+            <div className="relative w-full pb-[56.25%]">
+              <iframe
+                src="https://www.youtube.com/embed/ZvDZPpVM9gI"
+                title="Women In Tech talk"
+                className="absolute top-0 left-0 w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+          <div className="p-6 rounded-lg bg-card border border-border transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+            <h3 className="text-xl font-bold mb-4">
+              Why WCAG Compliance Matters for Your Business
+            </h3>
+            <p className="text-muted-foreground mb-4">
+              Accessibility expands reach to the estimated 1 billion people
+              worldwide living with a disability, and it protects revenue. I
+              teach it as the engineering discipline that saved a client
+              $500K+ in legal exposure.
+            </p>
+            <a
+              href="/contact"
+              className="inline-block px-6 py-3 rounded-lg bg-cyan-500 dark:bg-cyan-400 text-white dark:text-black hover:bg-cyan-400 dark:hover:bg-cyan-300 font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+            >
+              Book This Workshop
+            </a>
           </div>
         </div>
-        <div className="p-6 rounded-lg bg-card border border-border">
-          <h3 className="text-xl font-bold mb-4">
-            Why WCAG Compliance Matters for Your Business
-          </h3>
-          <p className="text-muted-foreground mb-4">
-            Accessibility expands reach to the estimated 1 billion people
-            worldwide living with a disability, and it protects revenue. I
-            teach it as the engineering discipline that saved a client $500K+
-            in legal exposure.
-          </p>
-          <a
-            href="/contact"
-            className="inline-block px-6 py-3 rounded-lg bg-cyan-500 dark:bg-cyan-400 text-white dark:text-black hover:bg-cyan-400 dark:hover:bg-cyan-300 font-semibold transition-colors"
-          >
-            Book This Workshop
-          </a>
-        </div>
-      </div>
+      </Reveal>
 
       <div className="mt-16 text-center">
         <p className="text-lg mb-6">
@@ -83,7 +92,7 @@ export default function WorkshopsPage() {
         </p>
         <a
           href="/contact"
-          className="px-8 py-4 rounded-lg bg-cyan-500 dark:bg-cyan-400 text-white dark:text-black hover:bg-cyan-400 dark:hover:bg-cyan-300 font-semibold transition-colors"
+          className="px-8 py-4 rounded-lg bg-cyan-500 dark:bg-cyan-400 text-white dark:text-black hover:bg-cyan-400 dark:hover:bg-cyan-300 font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
         >
           Get in Touch
         </a>
