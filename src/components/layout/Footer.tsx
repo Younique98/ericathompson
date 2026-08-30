@@ -18,7 +18,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
 }) => (
   <a
     href={href}
-    className="text-gray-400 hover:text-white transition-colors duration-200"
+    className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
     aria-label={label}
   >
     <svg role="img" viewBox={viewBox} className="w-6 h-6 fill-current">
@@ -29,7 +29,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({
 
 export const Footer = () => {
   return (
-    <footer className="bg-background border-t border-gray-800 py-12 mt-20">
+    <footer className="bg-background border-t border-border py-12 mt-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-center space-x-6">
           <SocialIcon
@@ -54,13 +54,13 @@ export const Footer = () => {
           />
           <a
             href="mailto:ericathompsonsmiles@gmail.com"
-            className="text-gray-400 hover:text-white transition-colors duration-200"
+            className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
             aria-label="Email"
           >
             <Mail size={24} />
           </a>
         </div>
-        <div className="text-center text-gray-500 mt-8">
+        <div className="text-center text-gray-500 dark:text-gray-400 mt-8">
           © {new Date().getFullYear()} Erica Thompson
         </div>
       </div>

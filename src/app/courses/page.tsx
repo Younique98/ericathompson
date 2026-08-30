@@ -25,7 +25,7 @@ export default function WorkshopsPage() {
   return (
     <div className="min-h-screen py-12 px-6 max-w-5xl mx-auto">
       <h1 className="text-4xl font-bold mb-4 pt-8">Workshops & Speaking</h1>
-      <p className="text-lg text-gray-400 mb-10 max-w-3xl">
+      <p className="text-lg text-muted-foreground mb-10 max-w-3xl">
         Live training for engineering teams, delivered remote or on-site.
         Custom curriculum built from production experience, not slides. Half
         day $3,500. Full day $6,000. Custom multi-session series from $12,000.
@@ -34,16 +34,16 @@ export default function WorkshopsPage() {
 
       <div className="grid md:grid-cols-2 gap-8 mb-16">
         {offerings.map((o) => (
-          <div key={o.title} className="p-6 rounded bg-gray-800">
+          <div key={o.title} className="p-6 rounded-lg bg-card border border-border">
             <h2 className="text-xl font-bold mb-3">{o.title}</h2>
-            <p className="text-gray-400">{o.detail}</p>
+            <p className="text-muted-foreground">{o.detail}</p>
           </div>
         ))}
       </div>
 
       <h2 className="text-2xl font-bold mb-6">Watch Me Teach</h2>
       <div className="grid md:grid-cols-2 gap-8">
-        <div className="p-6 rounded bg-gray-800">
+        <div className="p-6 rounded-lg bg-card border border-border">
           <h3 className="text-xl font-bold mb-4">
             Women In Tech: Establish and Grow Your Developer Career
           </h3>
@@ -58,11 +58,11 @@ export default function WorkshopsPage() {
             ></iframe>
           </div>
         </div>
-        <div className="p-6 rounded bg-gray-800">
+        <div className="p-6 rounded-lg bg-card border border-border">
           <h3 className="text-xl font-bold mb-4">
             Why WCAG Compliance Matters for Your Business
           </h3>
-          <p className="text-gray-400 mb-4">
+          <p className="text-muted-foreground mb-4">
             Accessibility expands reach to the estimated 1 billion people
             worldwide living with a disability, and it protects revenue. I
             teach it as the engineering discipline that saved a client $500K+
@@ -70,7 +70,7 @@ export default function WorkshopsPage() {
           </p>
           <a
             href="/contact"
-            className="inline-block px-6 py-3 rounded-lg bg-cyan-400 text-black hover:bg-cyan-300 font-semibold transition-colors"
+            className="inline-block px-6 py-3 rounded-lg bg-cyan-500 dark:bg-cyan-400 text-white dark:text-black hover:bg-cyan-400 dark:hover:bg-cyan-300 font-semibold transition-colors"
           >
             Book This Workshop
           </a>
@@ -83,7 +83,7 @@ export default function WorkshopsPage() {
         </p>
         <a
           href="/contact"
-          className="px-8 py-4 rounded-lg bg-cyan-400 text-black hover:bg-cyan-300 font-semibold transition-colors"
+          className="px-8 py-4 rounded-lg bg-cyan-500 dark:bg-cyan-400 text-white dark:text-black hover:bg-cyan-400 dark:hover:bg-cyan-300 font-semibold transition-colors"
         >
           Get in Touch
         </a>

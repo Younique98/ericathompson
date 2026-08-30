@@ -77,14 +77,14 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen py-12 px-6 max-w-3xl mx-auto">
       <h1 className="text-4xl font-bold mb-4 pt-8">Field Notes</h1>
-      <p className="text-lg text-gray-400 mb-12">
+      <p className="text-lg text-muted-foreground mb-12">
         Lessons from audits, compliance work, and training 500+ engineers.
         Longer form at{" "}
         <a
           href="https://www.youtube.com/@TheImposterEngineer"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-cyan-400 hover:underline"
+          className="text-cyan-600 dark:text-cyan-400 hover:underline"
         >
           The Imposter Engineer
         </a>
@@ -93,9 +93,9 @@ export default function BlogPage() {
       <div className="space-y-16">
         {posts.map((post) => (
           <article key={post.title}>
-            <p className="text-sm text-gray-500 mb-2">{post.date}</p>
+            <p className="text-sm text-muted-foreground mb-2">{post.date}</p>
             <h2 className="text-2xl font-bold mb-4">{post.title}</h2>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
               {post.body.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}

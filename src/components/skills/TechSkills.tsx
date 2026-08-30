@@ -52,9 +52,9 @@ export function TechSkills() {
         {skillCategories.map((category) => (
           <div 
             key={category.title}
-            className="p-6 rounded-lg bg-[#1a1f2d] border border-gray-800"
+            className="p-6 rounded-lg bg-card border border-border"
           >
-            <h3 className="text-xl font-semibold mb-4 text-white">
+            <h3 className="text-xl font-semibold mb-4 text-foreground">
               {category.title}
             </h3>
             <div className="flex flex-wrap gap-2 justify-center">

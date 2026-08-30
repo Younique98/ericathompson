@@ -69,9 +69,9 @@ export default function AboutPage() {
         <h2 className="text-2xl font-bold my-6">Track Record</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {achievements.map((a) => (
-            <div key={a.title} className="p-6 bg-gray-800 rounded-xl">
+            <div key={a.title} className="p-6 bg-card border border-border rounded-xl">
               <h3 className="text-xl font-semibold mb-3">{a.title}</h3>
-              <ul className="space-y-2 text-gray-300">
+              <ul className="space-y-2 text-muted-foreground">
                 {a.items.map((item) => (
                   <li key={item}>• {item}</li>
                 ))}
@@ -88,7 +88,7 @@ export default function AboutPage() {
 
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-2">Impact & Testimonials</h2>
-        <p className="text-lg mb-8 text-gray-300">
+        <p className="text-lg mb-8 text-muted-foreground">
           Throughout my career, I&apos;ve had the privilege of mentoring
           professionals transitioning into tech, helping them navigate career
           changes, and supporting their growth. Here&apos;s what some of them
@@ -97,15 +97,15 @@ export default function AboutPage() {
 
         <TestimonialGrid />
 
-        <div className="mt-10 p-6 bg-gray-800 rounded-xl text-center">
-          <p className="text-lg text-gray-300">
+        <div className="mt-10 p-6 bg-card border border-border rounded-xl text-center">
+          <p className="text-lg text-muted-foreground">
             Interested in mentoring, or want to talk about your team&apos;s
             engineering? I&apos;m always happy to connect.
           </p>
           <div className="pt-6">
             <a
               href="/contact"
-              className="px-6 py-3 rounded-lg bg-cyan-400 text-black font-semibold hover:bg-cyan-300 transition-colors"
+              className="px-6 py-3 rounded-lg bg-cyan-500 dark:bg-cyan-400 text-white dark:text-black font-semibold hover:bg-cyan-400 dark:hover:bg-cyan-300 transition-colors"
             >
               Get in Touch
             </a>

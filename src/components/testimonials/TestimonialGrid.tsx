@@ -14,10 +14,7 @@ export function TestimonialGrid() {
     <div>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((testimonial, index) => (
-          <Card
-            key={index}
-            className="bg-gray-800 border-gray-700 flex flex-col"
-          >
+          <Card key={index} className="flex flex-col">
             <CardContent className="p-6 flex flex-col flex-1">
               {testimonial.context && (
                 <span className="mb-4 inline-block w-fit px-2 py-1 text-xs text-cyan-400 bg-cyan-950 rounded-full">
@@ -25,18 +22,22 @@ export function TestimonialGrid() {
                 </span>
               )}
               <blockquote className="border-l-4 border-cyan-500 pl-4 flex-1">
-                <p className="text-gray-300 italic text-sm md:text-base">
+                <p className="text-gray-700 dark:text-gray-300 italic text-sm md:text-base">
                   &quot;{testimonial.quote}&quot;
                 </p>
               </blockquote>
               <div className="mt-4">
-                <p className="font-semibold text-white">
+                <p className="font-semibold text-foreground">
                   {testimonial.name}
                 </p>
                 {testimonial.title && (
-                  <p className="text-sm text-gray-400">{testimonial.title}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {testimonial.title}
+                  </p>
                 )}
-                <p className="text-sm text-gray-500">{testimonial.date}</p>
+                <p className="text-sm text-muted-foreground">
+                  {testimonial.date}
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -47,7 +48,7 @@ export function TestimonialGrid() {
         <div className="mt-8 text-center">
           <button
             onClick={() => setShowAll((v) => !v)}
-            className="px-6 py-3 rounded-lg bg-gray-800 hover:bg-gray-700 font-semibold text-white transition-colors"
+            className="px-6 py-3 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 font-semibold text-gray-900 dark:text-gray-100 transition-colors"
           >
             {showAll
               ? "Show fewer testimonials"
