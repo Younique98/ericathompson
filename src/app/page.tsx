@@ -76,7 +76,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="hidden md:block relative w-56 h-56 shrink-0 rounded-full overflow-hidden ring-4 ring-cyan-500/30 shadow-xl">
+          <div className="order-first md:order-none relative w-32 h-32 md:w-56 md:h-56 mx-auto md:mx-0 mb-2 md:mb-0 shrink-0 rounded-full overflow-hidden ring-4 ring-cyan-500/30 shadow-xl">
             <Image
               src="/images/erica-thompson-portrait.jpg"
               alt="Portrait of Erica Thompson"
