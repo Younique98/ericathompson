@@ -3,9 +3,10 @@ import { posts, readTimeFor } from "@/lib/posts";
 import { Reveal } from "@/components/motion/Reveal";
 
 export const metadata = {
-  title: "Field Notes | Erica Thompson",
+  title: "Field Notes",
   description:
     "Notes on engineering, audits, and the industry from Erica Thompson, Fractional CTO and Technical Educator.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {

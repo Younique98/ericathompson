@@ -10,6 +10,13 @@ import { BrowserFrame } from "@/components/ui/browser-frame";
 import { Reveal } from "@/components/motion/Reveal";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Projects",
+  description:
+    "A sample of what Erica Thompson has built and shipped, from military-community platforms to internal tooling.",
+  alternates: { canonical: "/projects" },
+};
+
 // TODO: (ET) Add correct image links to projects
 // TODO: (ET) Deploy all projects to vercel and update live url
 export default function ProjectsPage() {

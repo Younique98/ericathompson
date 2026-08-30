@@ -1,5 +1,12 @@
 import { Reveal } from "@/components/motion/Reveal";
 
+export const metadata = {
+  title: "Workshops & Speaking",
+  description:
+    "Live engineering training and conference talks from Erica Thompson: AI-assisted workflows, accessibility, frontend architecture, and engineering judgment.",
+  alternates: { canonical: "/courses" },
+};
+
 export default function WorkshopsPage() {
   const offerings = [
     {

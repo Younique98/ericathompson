@@ -1,0 +1,48 @@
+# Erica Thompson
+
+> Fractional CTO and technical educator. Self-taught, staff-level engineer
+> with 12+ years across frontend, backend, and infrastructure. Runs
+> fixed-scope technical audits, ongoing fractional CTO advisory, and team
+> training for engineering organizations. Creator of The Imposter Engineer,
+> where she publicly documents her methods and trains engineers into the
+> industry.
+
+Erica Thompson helps companies find and fix what's broken in their
+codebases, provides ongoing technical leadership as a fractional CTO, and
+trains engineering teams. Work is scoped and measured in outcomes, not
+hours billed. She does not staff hourly feature development.
+
+## Services
+
+- [Technical Audit](https://ericathompson.io/#engagements): Fixed fee,
+  fixed scope. Root-cause analysis across security, architecture,
+  accessibility, and performance, delivered as a prioritized remediation
+  roadmap. $7,500 (1 week) to $12,500 (2 weeks).
+- [Fractional CTO Advisory](https://ericathompson.io/#engagements): Ongoing
+  retainer covering architecture reviews, technical strategy, hiring
+  guidance, and AI enablement. From $4,000/month.
+- [Team Training & Workshops](https://ericathompson.io/courses):
+  AI-assisted engineering workflows, accessibility, frontend architecture,
+  and engineering judgment, delivered remote or on-site. Half day $3,500,
+  full day $6,000, custom multi-session series from $12,000.
+
+## Key pages
+
+- [About](https://ericathompson.io/about): Background, track record with
+  specific shipped outcomes, technical skills, and client/mentee
+  testimonials.
+- [Field Notes](https://ericathompson.io/blog): Long-form writing on
+  technical audits, compliance engineering, migrations, and engineering
+  career growth, drawn from real engagements.
+- [Projects](https://ericathompson.io/projects): Selected shipped work.
+- [Workshops & Speaking](https://ericathompson.io/courses): Workshop
+  curriculum and conference talks.
+- [Contact](https://ericathompson.io/contact): Direct contact methods and
+  a message form.
+
+## About the author
+
+Self-taught engineer, 12+ years across InsurTech startups to HashiCorp.
+Trained 500+ engineers into the industry, including 100+ veterans and
+military spouses, at an 80%+ placement rate, through The Imposter
+Engineer (https://www.youtube.com/@TheImposterEngineer).
