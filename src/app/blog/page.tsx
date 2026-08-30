@@ -27,51 +27,6 @@ export default function BlogPage() {
         "The industry keeps telling self-taught engineers to wait until they are ready. Readiness is not a feeling. It is a track record, and track records are built by shipping in public before you feel ready. That is the whole thesis of The Imposter Engineer, and it is why I put my methods, my numbers, and my mistakes on the record.",
       ],
     },
-    {
-      title: "The Compliance Deadline That Could Have Ended the Company",
-      date: "August 2026",
-      body: [
-        "An insurtech I worked with faced a regulatory deadline: implement Pet Model Act compliance or lose the ability to operate in all 50 states. On the line: $12.5M in annual revenue and 20K+ active policies that could not experience a minute of disruption.",
-        "The instinct under regulatory pressure is to freeze the roadmap and throw everyone at it. We did the opposite. We scoped the compliance work like an audit: mapped every surface the regulation touched, sequenced changes so each one shipped behind the last safely, and kept the rest of the roadmap moving. It shipped 10 days ahead of the deadline. Zero policy disruption.",
-        "Regulatory work is not different from other engineering. It is engineering with a real deadline, which most engineering does not have. Teams that treat compliance as a panic event pay twice: once in the scramble, once in the tech debt the scramble leaves behind. Teams that treat it as scoped, sequenced work ship early and keep their platform clean.",
-      ],
-    },
-    {
-      title: "The Tool That Still Runs Years After I Left",
-      date: "August 2026",
-      body: [
-        "At a gaming platform serving millions of tournament entries, engineer onboarding was a manual checklist: repo access, IAM roles, cloud provisioning, all done by hand, all error-prone, all stealing senior time.",
-        "I built an automation tool in Terraform and Go that eliminated 100% of the manual steps. Years later, it is still in production. That is the metric I care about most, more than the observability rollout that cut incident response from 2+ hours to 36 minutes, because it proves the thing consultants rarely prove: the system worked without me.",
-        "This is my test for infrastructure work, mine or anyone's. Not 'did it work at launch' but 'does it still run after the author leaves.' If your platform depends on one person's presence, you do not have infrastructure. You have a hostage situation with extra YAML.",
-      ],
-    },
-    {
-      title: "How to Run a Migration Nobody Notices",
-      date: "August 2026",
-      body: [
-        "I have led three major platform migrations with zero business disruption: a Redux-heavy legacy codebase rebuilt into modern React and TypeScript, a Flutter to React Native transition with full feature parity, and a B2C to B2B business model pivot that touched every surface of the product.",
-        "The pattern that made all three quiet: never migrate and change at the same time. Feature parity first, improvement second. Every migration failure I have seen came from teams who tried to fix the product while moving it, which means every bug has two suspects and every delay has no owner.",
-        "The second pattern: migrations are sequenced dependency rollouts, not events. When I published a cross-repository component library consumed by 5+ product teams, the library was the easy part. The value was leading every downstream repo through adoption in sync with a rebrand, so design and engineering hit the same moment together. That coordination is the actual job. The code is the artifact.",
-      ],
-    },
-    {
-      title: "Build the Tool That Makes Your Team Stop Needing You",
-      date: "August 2026",
-      body: [
-        "Marketing needed engineering for every campaign change. Claims teams needed engineering for every workflow tweak. Engineering was the bottleneck for work that was not engineering.",
-        "I built a custom CMS that put those changes in the hands of the teams who needed them: marketing, product, and claims. Engineering dependency dropped 35%. Campaign delivery accelerated 20%. Estimated productivity gain: $150K a year. And the engineers got their roadmap back.",
-        "The counterintuitive lesson for engineers worried about making themselves unnecessary: the person who removes the bottleneck becomes the go-to person, permanently. I became the engineer other teams routed hard problems to precisely because my systems kept solving problems while I slept. Dependency is not job security. Leverage is.",
-      ],
-    },
-    {
-      title: "What Being the Go-To Person Actually Costs, and Earns",
-      date: "August 2026",
-      body: [
-        "At one company I closed 172 tickets in a year, 22% of the entire team's output. I was the release captain, the person tagged into cross-team support channels, the one handed the errors nobody else could trace. Docker credential failures blocking contributor onboarding. Hashing performance. Sentry audits that cut error logs 40%.",
-        "Here is the honest accounting. Being the go-to person taught me more, faster, than any curriculum could: you learn systems by being handed their worst days. It is also how staff-level operators end up doing staff-level work at mid-level titles, because output alone does not reprice you. I know both sides of that ledger personally.",
-        "So my advice to engineers in that seat has two parts. Take the hard tickets, they are compounding education. And document your wins in business terms as you go, revenue protected, hours saved, errors eliminated, because the record you keep is the leverage you will negotiate with later. The work makes you valuable. The record makes you paid.",
-      ],
-    },
   ];
 
   return (
