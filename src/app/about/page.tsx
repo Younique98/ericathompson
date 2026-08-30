@@ -1,6 +1,8 @@
 import { Intro } from "@/components/Intro";
 import { TechSkills } from "@/components/skills/TechSkills";
 import { TestimonialGrid } from "@/components/testimonials/TestimonialGrid";
+import { HeroMark } from "@/components/HeroMark";
+import { Reveal } from "@/components/motion/Reveal";
 
 export default function AboutPage() {
   const achievements = [
@@ -45,9 +47,13 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen py-12 px-6 max-w-5xl mx-auto">
       <h1 className="text-4xl font-bold mb-8 pt-6">About Me</h1>
-      <div className="prose prose-invert max-w-none">
-        <Intro />
-      </div>
+
+      <section className="grid md:grid-cols-[1fr_auto] gap-8 items-center mb-4">
+        <div className="prose prose-invert max-w-none">
+          <Intro />
+        </div>
+        <HeroMark className="hidden md:block w-40 h-40 shrink-0" />
+      </section>
 
       <section className="mb-12 text-lg leading-relaxed space-y-4">
         <p>
@@ -65,53 +71,62 @@ export default function AboutPage() {
         </p>
       </section>
 
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold my-6">Track Record</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {achievements.map((a) => (
-            <div key={a.title} className="p-6 bg-card border border-border rounded-xl">
-              <h3 className="text-xl font-semibold mb-3">{a.title}</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                {a.items.map((item) => (
-                  <li key={item}>• {item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-4">Skills</h2>
-        <TechSkills />
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold mb-2">Impact & Testimonials</h2>
-        <p className="text-lg mb-8 text-muted-foreground">
-          Throughout my career, I&apos;ve had the privilege of mentoring
-          professionals transitioning into tech, helping them navigate career
-          changes, and supporting their growth. Here&apos;s what some of them
-          have to say:
-        </p>
-
-        <TestimonialGrid />
-
-        <div className="mt-10 p-6 bg-card border border-border rounded-xl text-center">
-          <p className="text-lg text-muted-foreground">
-            Interested in mentoring, or want to talk about your team&apos;s
-            engineering? I&apos;m always happy to connect.
-          </p>
-          <div className="pt-6">
-            <a
-              href="/contact"
-              className="px-6 py-3 rounded-lg bg-cyan-500 dark:bg-cyan-400 text-white dark:text-black font-semibold hover:bg-cyan-400 dark:hover:bg-cyan-300 transition-colors"
-            >
-              Get in Touch
-            </a>
+      <Reveal>
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold my-6">Track Record</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {achievements.map((a) => (
+              <div
+                key={a.title}
+                className="p-6 bg-card border border-border rounded-xl transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+              >
+                <h3 className="text-xl font-semibold mb-3">{a.title}</h3>
+                <ul className="space-y-2 text-muted-foreground">
+                  {a.items.map((item) => (
+                    <li key={item}>• {item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
+      </Reveal>
+
+      <Reveal>
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-4">Skills</h2>
+          <TechSkills />
+        </section>
+      </Reveal>
+
+      <Reveal>
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold mb-2">Impact & Testimonials</h2>
+          <p className="text-lg mb-8 text-muted-foreground">
+            Throughout my career, I&apos;ve had the privilege of mentoring
+            professionals transitioning into tech, helping them navigate
+            career changes, and supporting their growth. Here&apos;s what
+            some of them have to say:
+          </p>
+
+          <TestimonialGrid />
+
+          <div className="mt-10 p-6 bg-card border border-border rounded-xl text-center">
+            <p className="text-lg text-muted-foreground">
+              Interested in mentoring, or want to talk about your team&apos;s
+              engineering? I&apos;m always happy to connect.
+            </p>
+            <div className="pt-6">
+              <a
+                href="/contact"
+                className="px-6 py-3 rounded-lg bg-cyan-500 dark:bg-cyan-400 text-white dark:text-black font-semibold hover:bg-cyan-400 dark:hover:bg-cyan-300 transition-colors"
+              >
+                Get in Touch
+              </a>
+            </div>
+          </div>
+        </section>
+      </Reveal>
     </div>
   );
 }
