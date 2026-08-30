@@ -35,7 +35,7 @@ export function Intro() {
       >
         <TypeAnimation
           sequence={[
-            'I\'m a software engineer by trade and a storyteller at heart, passionate about creating scalable systems and demystifying tech for others.',
+            'Fractional CTO and technical educator. I audit codebases, fix what is broken, and hand teams back clean systems they can run without me. 12+ years. 500+ engineers trained.',
             1000,
           ]}
           wrapper="span"
