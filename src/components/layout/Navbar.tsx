@@ -56,11 +56,14 @@ export const Navbar = () => {
             <Link
               href="/"
               className={clsx(
-                "font-bold text-xl",
-                isLight ? "text-black " : "text-white",
+                "flex items-center justify-center w-9 h-9 rounded-full text-sm font-bold transition-colors",
+                isLight
+                  ? "bg-black text-white hover:bg-gray-800"
+                  : "bg-white text-black hover:bg-gray-200",
               )}
             >
-              Erica Thompson
+              <span className="sr-only">Erica Thompson, home</span>
+              <span aria-hidden="true">ET</span>
             </Link>
           </div>
 
@@ -93,8 +96,13 @@ export const Navbar = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-3 flex flex-col">
+          <div
+            className={clsx(
+              "md:hidden border-t",
+              isLight ? "border-black/10" : "border-white/10",
+            )}
+          >
+            <div className="px-2 py-4 space-y-4 flex flex-col text-base">
               <NavLink href="/">Home</NavLink>
               <NavLink href="/blog">Blog</NavLink>
               <NavLink href="/courses">Courses</NavLink>
