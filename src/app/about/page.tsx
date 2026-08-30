@@ -4,6 +4,19 @@ import { TechSkills } from "@/components/skills/TechSkills";
 import { TestimonialGrid } from "@/components/testimonials/TestimonialGrid";
 import { Reveal } from "@/components/motion/Reveal";
 
+export const metadata = {
+  title: "About",
+  description:
+    "Self-taught to staff-level: Erica Thompson's background, track record, technical skills, and client testimonials.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Erica Thompson",
+    description:
+      "Self-taught to staff-level: background, track record, technical skills, and client testimonials.",
+    url: "https://ericathompson.io/about",
+  },
+};
+
 export default function AboutPage() {
   const achievements = [
     {
