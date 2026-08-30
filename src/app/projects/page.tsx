@@ -3,14 +3,13 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-  CardContent,
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 // TODO: (ET) Add correct image links to projects
-//TODO: (ET) Deploy all projects to vercel and update live url
+// TODO: (ET) Deploy all projects to vercel and update live url
 export default function ProjectsPage() {
   const projects = [
     {
@@ -18,7 +17,8 @@ export default function ProjectsPage() {
       description:
         "A ridesharing platform designed for military bases to connect personnel for safe and efficient transportation.",
       repo: "https://github.com/Younique98/military_base_rideshare",
-      live: "https://github.com/Younique98/military_base_rideshare/blob/main/README.md",
+      details:
+        "https://github.com/Younique98/military_base_rideshare/blob/main/README.md",
       image: "/images/military_ride_share_app.jpg",
     },
     {
@@ -26,7 +26,8 @@ export default function ProjectsPage() {
       description:
         "A platform empowering military spouses by offering career-building resources and opportunities.",
       repo: "https://github.com/Younique98/milspouse-elevate",
-      live: "https://github.com/Younique98/milspouse-elevate/blob/main/README.md",
+      details:
+        "https://github.com/Younique98/milspouse-elevate/blob/main/README.md",
       image: "/images/MilSpouse.png",
     },
     {
@@ -34,7 +35,8 @@ export default function ProjectsPage() {
       description:
         "The official company website for Windless Technologies, showcasing services, projects, and more.",
       repo: "https://github.com/Younique98/windless_technologies_company_website",
-      live: "https://github.com/Younique98/windless_technologies_company_website/blob/main/README.md",
+      details:
+        "https://github.com/Younique98/windless_technologies_company_website/blob/main/README.md",
       image: "/images/home_page_consulting_ windless_technologies.png",
     },
     {
@@ -42,43 +44,64 @@ export default function ProjectsPage() {
       description:
         "A blog platform leveraging Elasticsearch for fast, full-text search and excellent content discovery.",
       repo: "https://github.com/Younique98/elastic-search-blog",
-      live: "https://github.com/Younique98/elastic-search-blog/blob/main/README.md",
+      details:
+        "https://github.com/Younique98/elastic-search-blog/blob/main/README.md",
       image: "/images/elastic_search_walkthrough.png",
     },
   ];
 
   return (
-    <div className="min-h-screen py-20 bg-gray-900 text-gray-100">
-      <div className="max-w-4xl mx-auto">
- <h1 className="text-4xl font-bold mb-8 text-center">Projects</h1>
- <div className="grid grid-cols-1 gap-12">
-   {projects.map((project, index) => (
-     <Card key={index} className="hover:shadow-lg transition-shadow duration-300 w-full">
-       <CardHeader className="h-32">
-         <CardTitle className="text-2xl font-bold">{project.title}</CardTitle>
-         <CardDescription>{project.description}</CardDescription>
-       </CardHeader>
-       <CardContent className="h-[600px] flex items-center justify-center">
-         <Image
-           src={project.image}
-           alt={`${project.title} preview`}
-           width={800}
-           height={600}
-           className="rounded-md w-full h-full object-contain"
-         />
-       </CardContent>
-       <CardFooter className="h-20 flex justify-between">
-         <Button asChild variant="secondary">
-           <a href={project.live} target="_blank" rel="noopener noreferrer">Live</a>
-         </Button>
-         <Button asChild>
-           <a href={project.repo} target="_blank" rel="noopener noreferrer">GitHub</a>
-         </Button>
-       </CardFooter>
-     </Card>
-   ))}
- </div>
-</div>
+    <div className="min-h-screen py-20 px-6 bg-gray-900 text-gray-100">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold mb-2 text-center">Projects</h1>
+        <p className="text-gray-400 text-center mb-12 max-w-xl mx-auto">
+          A sample of what I&apos;ve built and shipped, from military-community
+          platforms to internal tooling.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <Card
+              key={index}
+              className="bg-gray-800 border-gray-700 overflow-hidden flex flex-col hover:border-cyan-500/50 transition-colors"
+            >
+              <div className="relative w-full aspect-video bg-gray-900">
+                <Image
+                  src={project.image}
+                  alt={`${project.title} preview`}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle className="text-xl">{project.title}</CardTitle>
+                <CardDescription className="text-gray-400">
+                  {project.description}
+                </CardDescription>
+              </CardHeader>
+              <CardFooter className="mt-auto flex gap-3">
+                <Button asChild variant="secondary" className="flex-1">
+                  <a
+                    href={project.details}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Details
+                  </a>
+                </Button>
+                <Button asChild className="flex-1">
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

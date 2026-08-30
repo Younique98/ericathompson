@@ -1,48 +1,61 @@
-// TODO (ET): Add dynamic rendering of blog posts
 export default function BlogPage() {
-  const blogPosts = [
+  const posts = [
     {
-      title:
-        "How AI-Driven Development is Revolutionizing Software Engineering",
-      excerpt:
-        "AI tools like GitHub Copilot and ChatGPT are transforming software development, offering code suggestions, automating repetitive tasks, and boosting productivity. Learn how these technologies are shaping the future of engineering.",
+      title: "What 400 Daily 404s Taught Me About Technical Audits",
+      date: "August 2026",
+      body: [
+        "When I audited a documentation platform serving 100K+ users, the symptom was simple: hundreds of routing errors every day. The instinct most teams have is to fix the errors. Patch the redirects, silence the alerts, move on.",
+        "The audit found something different. The errors were not 400 separate problems. They were three systemic ones: legacy slug mapping, malformed path normalization, and unvalidated version resolution. Fix those three root causes and the error rate dropped 60%. Patch the symptoms and you would still be patching today.",
+        "That is the entire argument for a fixed-scope audit over ongoing firefighting. You are not paying for hours of fixing. You are paying for the diagnosis that makes most of the fixing unnecessary. When I scope an audit now, the deliverable is never a list of bugs. It is a map of root causes, ranked by what they cost you, with a remediation path your own team can execute.",
+      ],
     },
     {
-      title: "Why WCAG Compliance Matters for Your Business",
-      excerpt:
-        "Digital accessibility isn't optional—it's essential for reaching a diverse audience and boosting business success. Discover how WCAG compliance drives inclusivity, improves SEO, and expands your market reach.",
+      title: "Accessibility Is Not a Checkbox. It Is $500K.",
+      date: "August 2026",
+      body: [
+        "A company I worked with faced an active accessibility lawsuit threat. The codebase had 200+ WCAG violations across 15+ pages. Legal exposure: over half a million dollars, plus a Series A due diligence process that would surface all of it.",
+        "We did not hire an agency to bolt on fixes. We built accessibility into the engineering system itself: automated testing with jest-axe and pa11y in the CI pipeline, a remediation framework the team could follow without me, and component patterns that made the accessible version the default version.",
+        "Result: 95% WCAG 2.1 compliance, the lawsuit risk eliminated, and due diligence passed. The lesson generalizes. Compliance done as a one-time cleanup decays immediately. Compliance done as a system compounds. This is true for accessibility, security, and testing alike, and it is why every engagement I run ends with your team owning the system, not renting my attention.",
+      ],
     },
     {
-      title: "Mastering Frontend Development",
-      excerpt:
-        "In today's tech landscape, frontend development is more critical than ever. This course dives deep into creating stunning, responsive, and accessible user interfaces. Learn advanced concepts in React, CSS architecture, and design systems, while mastering the art of building user-friendly applications. Whether you're a beginner looking to break into frontend development or a mid-level engineer aiming to refine your skills, this course provides the tools and guidance you need to deliver polished, professional results.",
-    },
-    {
-      title: "Introduction to Cloud Architecture",
-      excerpt:
-        "Cloud computing powers the modern web, and this course is your gateway to understanding how it all works. Explore the essentials of cloud architecture, from infrastructure-as-code to building scalable, resilient systems on platforms like AWS and GCP. By the end of this course, you'll have a solid foundation in deploying, monitoring, and managing cloud-based applications, giving you the confidence to tackle real-world challenges in any organization.",
-    },
-    {
-      title: "The Art of Debugging",
-      excerpt:
-        "Debugging is an essential skill for any developer, but mastering it can be a game-changer. This course teaches you how to think like a detective, systematically approach bugs, and uncover hidden issues in your code. From learning how to use debugging tools to leveraging logs and performance monitoring, this course will help you build robust, error-free applications. Perfect for developers who want to improve their problem-solving skills and reduce debugging frustration.",
+      title: "Self-Taught to Staff Level: What Actually Transfers",
+      date: "August 2026",
+      body: [
+        "I did not come through a CS degree pipeline. I started fixing family computers and taught myself into a 12+ year engineering career that runs from InsurTech startups to HashiCorp. Along the way I trained 500+ engineers, most of them career changers, into the industry at an 80%+ placement rate.",
+        "Here is what I learned matters, and what does not. Credentials got none of my students hired. Judgment did: the ability to read an unfamiliar codebase, form a hypothesis, and test it cheaply. Debugging like a detective instead of guessing. Writing down what you found so the next person does not repeat the search.",
+        "The industry keeps telling self-taught engineers to wait until they are ready. Readiness is not a feeling. It is a track record, and track records are built by shipping in public before you feel ready. That is the whole thesis of The Imposter Engineer, and it is why I put my methods, my numbers, and my mistakes on the record.",
+      ],
     },
   ];
 
   return (
-    <div className="min-h-screen py-12 px-6">
-      <h1 className="text-4xl font-bold mb-8 pt-8">Blog</h1>
-      <div className="grid gap-8">
-        {blogPosts.map((post, index) => (
-          <div
-            key={index}
-            className="p-6 rounded bg-gray-800 hover:bg-gray-700 transition-colors"
-          >
-            <h2 className="text-2xl font-semibold mb-2 text-white">
-              {post.title}
-            </h2>
-            <p className="text-gray-400">{post.excerpt}</p>
-          </div>
+    <div className="min-h-screen py-12 px-6 max-w-3xl mx-auto">
+      <h1 className="text-4xl font-bold mb-4 pt-8">Field Notes</h1>
+      <p className="text-lg text-gray-400 mb-12">
+        Lessons from audits, compliance work, and training 500+ engineers.
+        Longer form at{" "}
+        <a
+          href="https://www.youtube.com/@TheImposterEngineer"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 hover:underline"
+        >
+          The Imposter Engineer
+        </a>
+        .
+      </p>
+      <div className="space-y-16">
+        {posts.map((post) => (
+          <article key={post.title}>
+            <p className="text-sm text-gray-500 mb-2">{post.date}</p>
+            <h2 className="text-2xl font-bold mb-4">{post.title}</h2>
+            <div className="space-y-4 text-gray-300 leading-relaxed">
+              {post.body.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          </article>
         ))}
       </div>
     </div>

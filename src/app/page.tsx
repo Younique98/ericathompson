@@ -12,20 +12,20 @@ export default function Home() {
     {
       title: "Technical Audit",
       detail:
-        "1 to 2 weeks. I dig into your codebase, find root causes, and deliver a prioritized remediation roadmap. Security, architecture, accessibility, performance.",
-      price: "From $1,000/day",
+        "Fixed fee, fixed scope. I dig into your codebase, find root causes, and deliver a prioritized remediation roadmap. Security, architecture, accessibility, performance. On-site fly-in audits available.",
+      price: "$7,500 (1 week) / $12,500 (2 weeks)",
     },
     {
       title: "Fractional CTO Advisory",
       detail:
         "Ongoing retainer. Architecture reviews, technical strategy, hiring guidance, AI enablement. Your team keeps the judgment after I leave.",
-      price: "$3K to $5K/month",
+      price: "From $4K/month",
     },
     {
       title: "Team Training & Workshops",
       detail:
         "AI-assisted engineering workflows, React architecture, accessibility, async collaboration. Built for teams that want capability, not dependency.",
-      price: "$2K to $12K/session",
+      price: "Half day $3,500. Full day $6,000. Custom series from $12K.",
     },
   ];
 
@@ -116,7 +116,8 @@ export default function Home() {
           </div>
           <p className="mt-6 text-center text-sm text-gray-500 dark:text-gray-400">
             Select engagements. Tuesday through Thursday. Async-first teams
-            preferred. Fully remote, worldwide.
+            preferred. Remote worldwide, with on-site audits and conference
+            speaking by arrangement. I do not staff hourly feature development.
           </p>
         </section>
 
