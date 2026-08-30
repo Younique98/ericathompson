@@ -1,4 +1,4 @@
-import { HeroMark } from "@/components/HeroMark";
+import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
 
 export default function Home() {
@@ -76,7 +76,15 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <HeroMark className="hidden md:block w-56 h-56 shrink-0" />
+          <div className="hidden md:block relative w-56 h-56 shrink-0 rounded-full overflow-hidden ring-4 ring-cyan-500/30 shadow-xl">
+            <Image
+              src="/images/erica-thompson-portrait.jpg"
+              alt="Portrait of Erica Thompson"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
         </section>
 
         {/* Proof */}

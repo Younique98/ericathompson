@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { Intro } from "@/components/Intro";
 import { TechSkills } from "@/components/skills/TechSkills";
 import { TestimonialGrid } from "@/components/testimonials/TestimonialGrid";
-import { HeroMark } from "@/components/HeroMark";
 import { Reveal } from "@/components/motion/Reveal";
 
 export default function AboutPage() {
@@ -52,7 +52,14 @@ export default function AboutPage() {
         <div className="prose prose-invert max-w-none">
           <Intro />
         </div>
-        <HeroMark className="hidden md:block w-40 h-40 shrink-0" />
+        <div className="hidden md:block relative w-40 h-40 shrink-0 rounded-full overflow-hidden ring-4 ring-cyan-500/30 shadow-xl">
+          <Image
+            src="/images/erica-thompson-portrait.jpg"
+            alt="Portrait of Erica Thompson"
+            fill
+            className="object-cover"
+          />
+        </div>
       </section>
 
       <section className="mb-12 text-lg leading-relaxed space-y-4">
