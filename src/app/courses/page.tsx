@@ -70,7 +70,7 @@ export default function WorkshopsPage() {
           </p>
           <a
             href="/contact"
-            className="inline-block px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 font-semibold"
+            className="inline-block px-6 py-3 rounded-lg bg-cyan-400 text-black hover:bg-cyan-300 font-semibold transition-colors"
           >
             Book This Workshop
           </a>
@@ -83,7 +83,7 @@ export default function WorkshopsPage() {
         </p>
         <a
           href="/contact"
-          className="px-8 py-4 rounded-lg bg-blue-500 text-white hover:bg-blue-600 font-semibold"
+          className="px-8 py-4 rounded-lg bg-cyan-400 text-black hover:bg-cyan-300 font-semibold transition-colors"
         >
           Get in Touch
         </a>
