@@ -52,7 +52,7 @@ export default function AboutPage() {
         <div className="prose prose-invert max-w-none">
           <Intro />
         </div>
-        <div className="hidden md:block relative w-40 h-40 shrink-0 rounded-full overflow-hidden ring-4 ring-cyan-500/30 shadow-xl">
+        <div className="order-first md:order-none relative w-28 h-28 md:w-40 md:h-40 mx-auto md:mx-0 mb-2 md:mb-0 shrink-0 rounded-full overflow-hidden ring-4 ring-cyan-500/30 shadow-xl">
           <Image
             src="/images/erica-thompson-portrait.jpg"
             alt="Portrait of Erica Thompson"
