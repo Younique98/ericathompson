@@ -20,7 +20,7 @@ export function Intro() {
               1000,
             ]}
             wrapper="span"
-            className="bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text"
+            className="bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-500 text-transparent bg-clip-text"
             speed={50}
             repeat={0}
           />
@@ -31,7 +31,7 @@ export function Intro() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 1.5 }}
-        className="text-xl text-gray-300 leading-relaxed"
+        className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed"
       >
         <TypeAnimation
           sequence={[

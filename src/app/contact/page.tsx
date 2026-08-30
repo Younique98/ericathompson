@@ -42,7 +42,7 @@ export default function ContactPage() {
     <div className="min-h-screen py-16 px-6">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-4">Let&apos;s talk</h1>
-        <p className="text-gray-400 mb-10 text-lg leading-relaxed">
+        <p className="text-muted-foreground mb-10 text-lg leading-relaxed">
           Whether you need a technical audit, ongoing advisory, or a workshop
           for your team, tell me a bit about what you&apos;re working on and
           I&apos;ll get back to you within 2 business days.
@@ -55,22 +55,26 @@ export default function ContactPage() {
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="p-5 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors flex flex-col items-start gap-2"
+              className="p-5 bg-card border border-border rounded-xl hover:bg-accent transition-colors flex flex-col items-start gap-2"
             >
-              <Icon className="w-5 h-5 text-cyan-400" />
+              <Icon className="w-5 h-5 text-cyan-600 dark:text-cyan-400" />
               <div>
-                <p className="font-semibold text-white text-sm">{label}</p>
-                <p className="text-gray-400 text-xs break-all">{value}</p>
+                <p className="font-semibold text-foreground text-sm">
+                  {label}
+                </p>
+                <p className="text-muted-foreground text-xs break-all">
+                  {value}
+                </p>
               </div>
             </a>
           ))}
         </div>
 
-        <div className="p-6 bg-gray-800 rounded-xl mb-10">
-          <h2 className="text-xl font-semibold mb-2 text-white">
+        <div className="p-6 bg-card border border-border rounded-xl mb-10">
+          <h2 className="text-xl font-semibold mb-2 text-foreground">
             Quick message
           </h2>
-          <p className="text-sm text-gray-400 mb-6">
+          <p className="text-sm text-muted-foreground mb-6">
             This opens your email client with the details filled in. Nothing
             is stored or sent anywhere else.
           </p>
@@ -82,7 +86,7 @@ export default function ContactPage() {
                 required
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full rounded-lg bg-gray-900 border border-gray-700 px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full rounded-lg bg-background border border-border px-4 py-3 text-sm text-foreground placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
               <input
                 type="email"
@@ -90,7 +94,7 @@ export default function ContactPage() {
                 required
                 value={form.email}
                 onChange={(e) => setForm({ ...form, email: e.target.value })}
-                className="w-full rounded-lg bg-gray-900 border border-gray-700 px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                className="w-full rounded-lg bg-background border border-border px-4 py-3 text-sm text-foreground placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500"
               />
             </div>
             <textarea
@@ -99,20 +103,20 @@ export default function ContactPage() {
               rows={4}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full rounded-lg bg-gray-900 border border-gray-700 px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+              className="w-full rounded-lg bg-background border border-border px-4 py-3 text-sm text-foreground placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500"
             />
             <button
               type="submit"
-              className="px-6 py-3 rounded-lg bg-cyan-400 hover:bg-cyan-300 text-black font-semibold transition-colors"
+              className="px-6 py-3 rounded-lg bg-cyan-500 dark:bg-cyan-400 hover:bg-cyan-400 dark:hover:bg-cyan-300 text-white dark:text-black font-semibold transition-colors"
             >
               Send message
             </button>
           </form>
         </div>
 
-        <div className="text-center py-6 border-t border-gray-800">
+        <div className="text-center py-6 border-t border-border">
           <h2 className="text-xl font-bold mb-2">Support the work</h2>
-          <p className="text-gray-400 mb-6 text-sm">
+          <p className="text-muted-foreground mb-6 text-sm">
             If the free content and mentoring has helped you, consider buying
             me a coffee.
           </p>

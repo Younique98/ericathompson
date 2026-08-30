@@ -51,10 +51,10 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <div className="min-h-screen py-20 px-6 bg-gray-900 text-gray-100">
+    <div className="min-h-screen py-20 px-6 bg-background text-foreground">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-bold mb-2 text-center">Projects</h1>
-        <p className="text-gray-400 text-center mb-12 max-w-xl mx-auto">
+        <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
           A sample of what I&apos;ve built and shipped, from military-community
           platforms to internal tooling.
         </p>
@@ -62,9 +62,9 @@ export default function ProjectsPage() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="bg-gray-800 border-gray-700 overflow-hidden flex flex-col hover:border-cyan-500/50 transition-colors"
+              className="overflow-hidden flex flex-col hover:border-cyan-500/50 transition-colors"
             >
-              <div className="relative w-full aspect-video bg-gray-900">
+              <div className="relative w-full aspect-video bg-muted">
                 <Image
                   src={project.image}
                   alt={`${project.title} preview`}
@@ -74,9 +74,7 @@ export default function ProjectsPage() {
               </div>
               <CardHeader>
                 <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription className="text-gray-400">
-                  {project.description}
-                </CardDescription>
+                <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto flex gap-3">
                 <Button asChild variant="secondary" className="flex-1">
