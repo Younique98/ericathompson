@@ -70,7 +70,7 @@ export const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/blog">Blog</NavLink>
-            <NavLink href="/courses">Courses</NavLink>
+            <NavLink href="/courses">Workshops</NavLink>
             <NavLink href="/projects">Projects</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/contact">Contact</NavLink>
@@ -105,7 +105,7 @@ export const Navbar = () => {
             <div className="px-2 py-4 space-y-4 flex flex-col text-base">
               <NavLink href="/">Home</NavLink>
               <NavLink href="/blog">Blog</NavLink>
-              <NavLink href="/courses">Courses</NavLink>
+              <NavLink href="/courses">Workshops</NavLink>
               <NavLink href="/projects">Projects</NavLink>
               <NavLink href="/about">About</NavLink>
               <NavLink href="/contact">Contact</NavLink>

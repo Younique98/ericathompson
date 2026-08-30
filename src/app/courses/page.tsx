@@ -1,58 +1,92 @@
-export default function CoursesPage() {
+export default function WorkshopsPage() {
+  const offerings = [
+    {
+      title: "AI-Assisted Engineering Workflows",
+      detail:
+        "How your team ships faster with AI tools without shipping risk. Prompting for code, review discipline, guardrails, and knowing when not to trust the output. Built for teams under pressure to adopt AI responsibly.",
+    },
+    {
+      title: "Accessibility That Survives an Audit",
+      detail:
+        "WCAG 2.1 compliance as an engineering practice, not a checkbox. Automated testing with jest-axe and pa11y, remediation frameworks, and how I took a platform to 95% compliance under active lawsuit threat.",
+    },
+    {
+      title: "Frontend Architecture & Design Systems",
+      detail:
+        "Component architecture, state management, and the patterns that keep a codebase maintainable past 10 engineers. Drawn from unifying design systems at HashiCorp and rebuilding legacy platforms in production.",
+    },
+    {
+      title: "From Junior to Trusted: Engineering Judgment",
+      detail:
+        "The curriculum behind 500+ engineers trained and placed. Debugging as detective work, reading unfamiliar codebases, and building the judgment that gets engineers promoted.",
+    },
+  ];
+
   return (
-    <div className="min-h-screen py-12">
-      <h1 className="text-4xl font-bold mb-8 pt-8">Courses</h1>
+    <div className="min-h-screen py-12 px-6 max-w-5xl mx-auto">
+      <h1 className="text-4xl font-bold mb-4 pt-8">Workshops & Speaking</h1>
+      <p className="text-lg text-gray-400 mb-10 max-w-3xl">
+        Live training for engineering teams, delivered remote or on-site.
+        Custom curriculum built from production experience, not slides. Half
+        day $3,500. Full day $6,000. Custom multi-session series from $12,000.
+        Conference talks and fly-in engagements by arrangement.
+      </p>
+
+      <div className="grid md:grid-cols-2 gap-8 mb-16">
+        {offerings.map((o) => (
+          <div key={o.title} className="p-6 rounded bg-gray-800">
+            <h2 className="text-xl font-bold mb-3">{o.title}</h2>
+            <p className="text-gray-400">{o.detail}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold mb-6">Watch Me Teach</h2>
       <div className="grid md:grid-cols-2 gap-8">
         <div className="p-6 rounded bg-gray-800">
-          <h2 className="text-xl font-bold mb-4">
+          <h3 className="text-xl font-bold mb-4">
             Women In Tech: Establish and Grow Your Developer Career
-          </h2>
+          </h3>
+          <div className="relative w-full pb-[56.25%]">
+            <iframe
+              src="https://www.youtube.com/embed/ZvDZPpVM9gI"
+              title="Women In Tech talk"
+              className="absolute top-0 left-0 w-full h-full"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+        <div className="p-6 rounded bg-gray-800">
+          <h3 className="text-xl font-bold mb-4">
+            Why WCAG Compliance Matters for Your Business
+          </h3>
           <p className="text-gray-400 mb-4">
-            Learn actionable strategies to build and advance your career as a
-            developer. In this session, we cover networking, skill-building, and
-            overcoming common challenges faced by women in tech.
+            Accessibility expands reach to the estimated 1 billion people
+            worldwide living with a disability, and it protects revenue. I
+            teach it as the engineering discipline that saved a client $500K+
+            in legal exposure.
           </p>
-          <section className="w-full">
-            <div className="relative w-full pb-[56.25%]">
-              <iframe
-                src="https://www.youtube.com/embed/ZvDZPpVM9gI"
-                title="YouTube video"
-                className="absolute top-0 left-0 w-full h-full"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </section>
+          <a
+            href="/contact"
+            className="inline-block px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 font-semibold"
+          >
+            Book This Workshop
+          </a>
         </div>
-        <div className="p-6 rounded bg-gray-800">
-          <h2 className="text-xl font-bold mb-4">
-            The importance of WCAG compliance and its impact on business reach.
-          </h2>
-          <p className="text-gray-400">
-            Web Content Accessibility Guidelines (WCAG) compliance is essential
-            for creating inclusive digital experiences. By ensuring websites and
-            applications are accessible to users with disabilities, businesses
-            can expand their reach to a broader audience, including the
-            estimated 1 billion people globally who experience some form of
-            disability.
-          </p>
-          <p className="text-gray-400 py-6">Course details coming soon...</p>
-        </div>
-        <div className="p-6 rounded bg-gray-800">
-          <h2 className="text-xl font-bold mb-4">
-            The rise of AI-driven development (e.g., GitHub Copilot, ChatGPT for
-            coding).
-          </h2>
-          <p className="text-gray-400">
-            As AI continues to evolve, the role of software engineers will
-            transform, with an emphasis on collaboration between human expertise
-            and machine intelligence. Mastering these tools will not only be a
-            competitive advantage but a necessity for engineers aiming to stay
-            ahead in an increasingly AI-augmented industry.
-          </p>
-          <p className="text-gray-400 py-6">Course details coming soon...</p>
-        </div>
+      </div>
+
+      <div className="mt-16 text-center">
+        <p className="text-lg mb-6">
+          Have a team that needs one of these, or a stage that needs a speaker?
+        </p>
+        <a
+          href="/contact"
+          className="px-8 py-4 rounded-lg bg-blue-500 text-white hover:bg-blue-600 font-semibold"
+        >
+          Get in Touch
+        </a>
       </div>
     </div>
   );
