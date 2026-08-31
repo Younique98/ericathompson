@@ -88,6 +88,15 @@ export default function ProjectsPage() {
       image: "/images/devsync_dashboard.jpg",
       label: "devsync.app",
     },
+    {
+      title: "AgentRadar",
+      description:
+        "A review board where engineers rate and review the AI coding tools, MCP servers, and agent skills they've actually used, with a Postgres-backed catalog and rate-limited review API.",
+      repo: "https://github.com/Younique98/agentradar",
+      details: "https://github.com/Younique98/agentradar/blob/main/README.md",
+      image: "/images/agentradar_home.jpg",
+      label: "agentradar.app",
+    },
   ];
 
   return (
