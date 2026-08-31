@@ -70,6 +70,15 @@ export default function ProjectsPage() {
       image: "/images/base_link_join.jpg",
       label: "baselink.app",
     },
+    {
+      title: "BoardKit",
+      description:
+        "A Progressive Web App that generates structured GitHub project boards from pre-built templates, cutting hours of manual issue setup down to seconds.",
+      repo: "https://github.com/Younique98/boardkit",
+      details: "https://github.com/Younique98/boardkit/blob/main/README.md",
+      image: "/images/boardkit_home.jpg",
+      label: "boardkit.app",
+    },
   ];
 
   return (
