@@ -17,7 +17,6 @@ export const metadata = {
   alternates: { canonical: "/projects" },
 };
 
-// TODO: (ET) Add correct image links to projects
 // TODO: (ET) Deploy all projects to vercel and update live url
 export default function ProjectsPage() {
   const projects = [
@@ -38,7 +37,7 @@ export default function ProjectsPage() {
       repo: "https://github.com/Younique98/milspouse-elevate",
       details:
         "https://github.com/Younique98/milspouse-elevate/blob/main/README.md",
-      image: "/images/MilSpouse.png",
+      image: "/images/MilSpouse.jpg",
       label: "milspouse-elevate.app",
     },
     {
@@ -48,7 +47,7 @@ export default function ProjectsPage() {
       repo: "https://github.com/Younique98/windless_technologies_company_website",
       details:
         "https://github.com/Younique98/windless_technologies_company_website/blob/main/README.md",
-      image: "/images/home_page_consulting_ windless_technologies.png",
+      image: "/images/windless_technologies.jpg",
       label: "windlesstechnologies.com",
     },
     {
@@ -58,7 +57,7 @@ export default function ProjectsPage() {
       repo: "https://github.com/Younique98/elastic-search-blog",
       details:
         "https://github.com/Younique98/elastic-search-blog/blob/main/README.md",
-      image: "/images/elastic_search_walkthrough.png",
+      image: "/images/elastic_search_walkthrough.jpg",
       label: "elastic-search-blog.app",
     },
   ];
@@ -81,6 +80,7 @@ export default function ProjectsPage() {
                       src={project.image}
                       alt={`${project.title} preview`}
                       fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
                       className="object-cover object-top"
                     />
                   </div>
