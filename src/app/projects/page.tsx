@@ -79,6 +79,15 @@ export default function ProjectsPage() {
       image: "/images/boardkit_home.jpg",
       label: "boardkit.app",
     },
+    {
+      title: "DevSync",
+      description:
+        "A full-stack DevOps platform with Vault-backed secrets, Consul service discovery, Prometheus metrics, and Terraform + Nomad provisioning.",
+      repo: "https://github.com/Younique98/devsync",
+      details: "https://github.com/Younique98/devsync/blob/main/README.md",
+      image: "/images/devsync_dashboard.jpg",
+      label: "devsync.app",
+    },
   ];
 
   return (
