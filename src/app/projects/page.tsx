@@ -60,6 +60,16 @@ export default function ProjectsPage() {
       image: "/images/elastic_search_walkthrough.jpg",
       label: "elastic-search-blog.app",
     },
+    {
+      title: "Base Link",
+      description:
+        "A secure, military-verified rideshare web app for service members and their dependents, with ID.me verification and real-time ride management.",
+      repo: "https://github.com/Younique98/military-rideshare",
+      details:
+        "https://github.com/Younique98/military-rideshare/blob/main/README.md",
+      image: "/images/base_link_join.jpg",
+      label: "baselink.app",
+    },
   ];
 
   return (
