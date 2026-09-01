@@ -66,6 +66,9 @@ lib64/
 *.swo
 *~
 
+# Claude Code tooling (local scratch, e.g. agent worktrees)
+.claude/
+
 # Database
 *.sqlite
 *.sqlite3
