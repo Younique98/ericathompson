@@ -1,8 +1,10 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
+// Pure CSS animation, not JS/Framer-Motion-driven - see the .animate-reveal
+// keyframes in globals.css for why. Content is always visible if CSS loads
+// (the browser baseline), and only the enter animation depends on that -
+// never the content itself.
 export function Reveal({
   children,
   delay = 0,
@@ -12,21 +14,12 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
-  const shouldReduceMotion = useReducedMotion();
-
-  if (shouldReduceMotion) {
-    return <div className={className}>{children}</div>;
-  }
-
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "200px" }}
-      transition={{ duration: 0.4, delay, ease: "easeOut" }}
-      className={className}
+    <div
+      className={cn("animate-reveal", className)}
+      style={{ animationDelay: `${delay}s` }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

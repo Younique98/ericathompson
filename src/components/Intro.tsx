@@ -1,17 +1,19 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 
+// TypeAnimation needs a client boundary for its internal hooks - unrelated
+// to the animation fix below, this file just happens to be both.
+//
+// Pure CSS entrance animation (see .animate-reveal in globals.css) - not
+// Framer Motion's mount-triggered `animate`, which still ships opacity:0
+// in the server-rendered HTML and only becomes visible once JS hydrates.
+// This is the very first thing a visitor sees, so it can't depend on
+// hydration speed to become visible.
 export function Intro() {
   return (
     <div className="py-16">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mb-8"
-      >
+      <div className="animate-reveal mb-8">
         <h1 className="text-4xl font-bold flex items-center gap-4">
           <span className="wave inline-block">👋🏾</span>
           <TypeAnimation
@@ -25,13 +27,11 @@ export function Intro() {
             repeat={0}
           />
         </h1>
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 1.5 }}
-        className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed"
+      <div
+        className="animate-reveal text-xl text-gray-700 dark:text-gray-300 leading-relaxed"
+        style={{ animationDelay: '1.5s' }}
       >
         <TypeAnimation
           sequence={[
@@ -43,7 +43,7 @@ export function Intro() {
           repeat={0}
           className="inline-block"
         />
-      </motion.div>
+      </div>
     </div>
   );
 }
