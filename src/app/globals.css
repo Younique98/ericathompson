@@ -76,3 +76,34 @@ nav {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
+
+/* Pure-CSS entrance animation for <Reveal>. Deliberately not JS/
+   IntersectionObserver-driven: content must never depend on hydration
+   or an observer callback to become visible, or it risks staying stuck
+   at opacity 0 if either is slow or throttled (seen in production on
+   Safari with tracking protections enabled - content past the fold
+   disappeared for several seconds on first load). CSS animations run
+   off the parsed stylesheet alone, so the worst case if something goes
+   wrong is no animation, never invisible content. */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: reveal 0.4s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
